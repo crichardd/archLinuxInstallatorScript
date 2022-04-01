@@ -13,23 +13,23 @@ parted /dev/sda mklabel msdos mkpart primary 0% 100%
 mkfs.ext4 /dev/sda1
 mount /dev/sda1 /mnt
 
-pacstrap /mnt base linux linux-firmware
+#pacstrap /mnt base linux linux-firmware
 
-mount /dev/sda1 /mnt
+#mount /dev/sda1 /mnt
 
-genfstab -U /mnt >> /mnt/etc/fstab
+#genfstab -U /mnt >> /mnt/etc/fstab
 
-arch-chroot /mnt
+#arch-chroot /mnt
 
-ln -sf /usr/share/zoneinfo/France/Paris /etc/localtime
+#ln -sf /usr/share/zoneinfo/France/Paris /etc/localtime
 
-hwclock --systohc
+#hwclock --systohc
 
-locale-gen
-/etc/locale.conf
-/etc/vconsole.conf
+#locale-gen
+#/etc/locale.conf
+#/etc/vconsole.conf
 
-mkinitcpio -P
+#mkinitcpio -P
 
-passwd
+#passwd
 
