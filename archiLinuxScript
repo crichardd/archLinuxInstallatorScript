@@ -8,7 +8,7 @@ loadkeys fr-latin1
 
 timedatectl set-ntp true
 
-parted /dev/sda mklabel msdos mkpart primary ext3 0% 100%
+parted /dev/sda mklabel msdos mkpart primary ext4 0% 100%
 
 mkfs.fat -F 32 /dev/efi_system_partition
 mount /dev/efi_system_partition /mnt/boot
