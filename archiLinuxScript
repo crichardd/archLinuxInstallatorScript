@@ -6,7 +6,7 @@
 loadkeys fr-latin1
 #ls /sys/firmware/efi/efivars
 
-echo "re-coucou"
+echo "coucou"
 timedatectl set-ntp true
 echo "before parted"
 
