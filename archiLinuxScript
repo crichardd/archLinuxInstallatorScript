@@ -11,7 +11,7 @@ timedatectl set-ntp true
 parted /dev/sda mklabel msdos mkpart primary ext4 0% 100%
 
 mkfs.ext4 /dev/sda
-mount /dev/sda1 /mnt
+mount /dev/sda /mnt
 
 pacstrap /mnt base linux linux-firmware
 
