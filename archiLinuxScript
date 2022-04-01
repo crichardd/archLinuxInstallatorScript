@@ -23,7 +23,7 @@ ln -sf /usr/share/zoneinfo/France/Paris /etc/localtime
 
 hwclock --systohc
 
-locate-gen
+locale-gen
 /etc/locale.conf
 /etc/vconsole.conf
 
