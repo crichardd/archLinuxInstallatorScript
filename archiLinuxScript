@@ -1,0 +1,33 @@
+#!/bin/sh
+
+gpg --keyserver-options autokey-retrive --verify archlinux-version-x86_64.iso.sig
+
+pacmon-key -v archlinux-verion-x86_64.iso.sig
+loadkeys de-latin1
+ls /sys/firmware/efi/efivars
+
+timedatect1 set-ntp true
+
+parted /dev/sda mklabel msdos mkpart P1 ext3 0% 100%
+
+mkfs.fat -F 32 /dev/efi_system_partition
+mount /dev/efi_system_partition /mnt/boot
+
+pacstrap /mnt base linux linux-firmware
+
+genfstab -U /mnt >> /mnt/etc/fstab
+
+arch-chroot /mnt
+
+ln -sf /usr/share/zoneinfo/France/Paris /etc/localtime
+
+hwclock --systohc
+
+locate-gen
+/etc/locale.conf
+/etc/vconsole.conf
+
+mkinitcpio -P
+
+passwd
+
