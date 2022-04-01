@@ -1,6 +1,6 @@
 #!/bin/sh
 
-gpg --keyserver-options autokey-retrive --verify archlinux-version-x86_64.iso.sig
+msdos --keyserver-options autokey-retrive --verify archlinux-2022.04.01-x86_64.iso.sig
 
 pacmon-key -v archlinux-verion-x86_64.iso.sig
 loadkeys de-latin1
