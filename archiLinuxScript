@@ -17,9 +17,9 @@ echo "after parted"
 mkfs.ext4 /dev/sda1
 mount /dev/sda1 /mnt
 
-#pacstrap /mnt base linux linux-firmware
+pacstrap /mnt base linux linux-firmware
 
-#mount /dev/sda1 /mnt
+mount /dev/sda1 /mnt
 
 #genfstab -U /mnt >> /mnt/etc/fstab
 
