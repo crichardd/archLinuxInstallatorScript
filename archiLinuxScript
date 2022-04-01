@@ -9,7 +9,9 @@ loadkeys fr-latin1
 echo "re-coucou"
 timedatectl set-ntp true
 echo "before parted"
-parted /dev/sda mklabel msdos mkpart primary ext4 0% 100%
+
+parted /dev/sda mklabel msdos 
+parted /dev/sda mkpart primary 0% 100%
 
 echo "after parted"
 mkfs.ext4 /dev/sda1
