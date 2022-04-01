@@ -23,4 +23,5 @@ mount /dev/sda1 /mnt
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
-arch-chroot /mnt /bin/bash -c 'ln -sf /usr/share/zoneinfo/France/Paris /etc/localtime; hwclock --systohc; locale-gen; touch /etc/locale.conf; echo "LANG=en_US.UTF-8" > /etc/locale.conf; touch /etc/vconsole.conf; echo "KEYMAP=fr-latin1" > /etc/vconsole.conf; touch /etc/hostname; echo "3IBC-crichard-pbisset" > /etc/hostname; mkinitcpio -P; passwd'
+arch-chroot /mnt /bin/bash -c 'ln -sf /usr/share/zoneinfo/France/Paris /etc/localtime; hwclock --systohc; locale-gen; touch /etc/locale.conf; echo "LANG=en_US.UTF-8" > /etc/locale.conf; touch /etc/vconsole.conf; echo "KEYMAP=fr-latin1" > /etc/vconsole.conf; touch /etc/hostname; echo "3IBC-crichard-pbisset" > /etc/hostname; mkinitcpio -P;'
+echo "Entrez la commande passwd pour creer votre mot de passe"
