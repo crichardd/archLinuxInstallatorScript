@@ -21,19 +21,6 @@ pacstrap /mnt base linux linux-firmware
 
 mount /dev/sda1 /mnt
 
-#genfstab -U /mnt >> /mnt/etc/fstab
+genfstab -U /mnt >> /mnt/etc/fstab
 
-#arch-chroot /mnt
-
-#ln -sf /usr/share/zoneinfo/France/Paris /etc/localtime
-
-#hwclock --systohc
-
-#locale-gen
-#/etc/locale.conf
-#/etc/vconsole.conf
-
-#mkinitcpio -P
-
-#passwd
-
+arch-chroot /mnt /bin/bash -c 'ln -sf /usr/share/zoneinfo/France/Paris /etc/localtime; hwclock --systohc; locale-gen; /etc/locale.conf; /etc/vconsole.conf; mkinitcpio -P; passwd'
