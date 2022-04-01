@@ -1,14 +1,14 @@
 #!/bin/sh
 
-msdos --keyserver-options autokey-retrive --verify archlinux-2022.04.01-x86_64.iso.sig
+#gpg --keyserver-options autokey-retrive --verify archlinux-2022.04.01-x86_64.iso.sig
 
-pacmon-key -v archlinux-verion-x86_64.iso.sig
-loadkeys de-latin1
-ls /sys/firmware/efi/efivars
+#pacmon-key -v archlinux-verion-x86_64.iso.sig
+loadkeys fr-latin1
+#ls /sys/firmware/efi/efivars
 
 timedatect1 set-ntp true
 
-parted /dev/sda mklabel msdos mkpart P1 ext3 0% 100%
+parted /dev/sda mklabel msdos mkpart primary ext3 0% 100%
 
 mkfs.fat -F 32 /dev/efi_system_partition
 mount /dev/efi_system_partition /mnt/boot
