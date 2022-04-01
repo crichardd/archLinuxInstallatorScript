@@ -6,10 +6,10 @@
 loadkeys fr-latin1
 #ls /sys/firmware/efi/efivars
 
-echo "coucou"
+echo "re-coucou"
 timedatectl set-ntp true
 echo "before parted"
-parted /dev/sda mklabel msdos mkpart primary 0% 100%
+parted /dev/sda mklabel msdos mkpart primary ext4 0% 100%
 
 echo "after parted"
 mkfs.ext4 /dev/sda1
